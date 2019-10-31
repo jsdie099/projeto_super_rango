@@ -10,13 +10,21 @@ if(isset($_POST) and !empty($_POST))
     $func -> setNome($_POST['nome']);
     $func -> setCpf($_POST['cpf']);
 
+    $tipo = $func->getTipo();
+    $nome = $func->getNome();
+    $cpf = $func->getCpf();
+
     $db = open_database();
-    $sql = " select * from funcionario where tipo = '".$func->getTipo()."' and nome = '".$func->getNome()."' and cpf = '".$func->getCpf()."'";
-    $exec = $db->query($sql);
-    $rows = $exec->num_rows;
+    $sql = " select * from funcionario where tipo=? and nome=? and cpf=?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("sss",$tipo,$nome,$cpf);
+    $exec->execute();
+    //$sql = " select * from funcionario where tipo = '".$func->getTipo()."' and nome = '".$func->getNome()."' and cpf = '".$func->getCpf()."'";
+    $results = $exec->get_result();
+    $rows = $results->num_rows;
     if($rows>0 && $func->getTipo()==1)
     {
-        while (($dados = $exec->fetch_object()))
+        while (($dados = $results->fetch_object()))
         {
             if(!isset($_SESSION))
             {
@@ -33,13 +41,13 @@ if(isset($_POST) and !empty($_POST))
     }
     if($rows>0 && $func->getTipo()==2)
     {
-        while ($dados = $exec->fetch_object())
+        while ($dados = $results->fetch_object())
         {
             if(!isset($_SESSION))
             {
                 session_start();
             }
-            $_SESSION['logado_f'] = $dados->id;
+            $_SESSION['logado_f'] = $dados->nome;
             header('location:entregador.php');
         }
 
