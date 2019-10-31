@@ -10,8 +10,11 @@
         $nome = $_POST['campo1'];
         $preco = $_POST['campo2'];
         $db = open_database();
-        $sql = "insert into alimento(id,descricao,preco) values (null,'".$nome."',$preco)";
-        $exec = $db->query($sql);
+        $sql = "insert into alimento(descricao,preco) values (?,?)";
+        $exec = $db->prepare($sql);
+        $exec->bind_param("sd",$nome,$preco);
+        $exec->execute();
+        //$sql = "insert into alimento(id,descricao,preco) values (null,'".$nome."',$preco)";
         $_SESSION['ok']="<h2 align='center'>Alimento adcionado com sucesso</h2>";
     }
 ?>
