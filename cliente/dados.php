@@ -12,11 +12,15 @@ if(!isset($_SESSION['logado']))
 $_SESSION['logado'];
 $db = open_database();
 ($_GET['id']==base64_encode($_SESSION['id']))?$id = base64_decode($_GET['id']):$id=$_SESSION['id'];
-$sql = "select * from usuario where id = ".$id;
-$exec = $db->query($sql);
-if($exec->num_rows>0)
+$sql = "select * from usuario where id=?";
+$exec = $db->prepare($sql);
+$exec->bind_param("i",$id);
+$exec->execute();
+$results = $exec->get_result();
+$rows = $results->num_rows;
+if($rows>0)
 {
-    while ($dados = $exec->fetch_object())
+    while ($dados = $results->fetch_object())
     {
         $nome = $dados->nome;
         $cpf = $dados->cpf;
