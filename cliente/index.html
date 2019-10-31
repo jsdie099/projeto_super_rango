@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>SUPER RANGO</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="widht=device-width,initial-scale=1.0"/>
+
+</head>
+<body>
+<script type="text/javascript">
+    Notification.requestPermission().then(function(result) {
+        console.log(result);
+    });
+</script>
+        <div class="container">
+            <header>
+
+                <nav class="nav-container">
+                    <a href="#"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a><br>
+                    <h1 id="titulo">SUPER RANGO</h1>
+                </nav>
+
+            </header>
+        </div>
+        <div class="wrapper">
+
+        <h1 class="titulo">Login do Cliente</h1><br>
+
+
+
+        <table id="table_index">
+            <tr>
+                <td>
+                        <form action="login.php">
+                            <input type="submit" value="Entrar">
+                        </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <form action="cadastro.php">
+                            <input type="submit" value="Cadastrar">
+                        </form>
+                </td>
+            </tr>
+        </table>
+        </div>
+
+</body>
+</html>

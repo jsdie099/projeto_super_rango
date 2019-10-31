@@ -1,0 +1,423 @@
+html
+{
+    font-family: "Times New Roman";
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background: url("../img/thumbnail_Fundo food.jpg");
+    background-size: cover;
+}
+#logo
+{
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-top: 30px;
+    padding-left: 50px;
+}
+header
+{
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+nav
+{
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    display: block;
+    z-index: 1;
+}
+nav:after
+{
+    clear: both;
+    content: "";
+    display: block;
+}
+#titulo
+{
+    text-align: center;
+    margin-top: 50px;
+    padding-left: 1%;
+    font-size: 30px;
+    alignment: center;
+    color: white;
+}
+
+.container
+{
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+
+.nav-container
+{
+    height: 135px;
+    width: 100%;
+    background: url("../img/thumbnail_Fundo food.jpg");
+    padding-right: 20%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.nav-container ul
+{
+    float: right;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 25px;
+}
+.nav-container li
+{
+    list-style: none;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    opacity: 0.8;
+    margin: auto;
+
+}
+.nav-container li a
+{
+    height: 50%;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.nav-container li a:hover
+{
+    color: orange;
+}
+#titulo
+{
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 40px;
+}
+.titulo
+{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper
+{
+    position: relative;
+    margin-left: auto;
+    color: white;
+}
+.wrapper table
+{
+    width: 100%;
+    text-align: center;
+}
+.wrapper td
+{
+    width: 50%;
+}
+.wrapper label
+{
+    color: white;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 300;
+}
+.wrapper input
+{
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 15px;
+    text-align: center;
+}
+.wrapper select
+{
+    text-transform: uppercase;
+    background-color: #FFF;
+    border-radius: 5px;
+    border-color: black;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 15px;
+    margin-bottom: 20px;
+}
+.wrapper input[type=submit]
+{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 30px;
+
+}
+.wrapper input[type=submit]:hover
+{
+    background-color: orange;
+}
+.wrapper a
+{
+    text-decoration: none;
+    color: yellow;
+}
+#table_hist
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#table_hist td
+{
+    height: 50px;
+    width: 32%;
+}
+.preco
+{
+    clear: both;
+    text-align: right;
+    font-size: 20px;
+    padding-left: 70%;
+}
+.teste ul
+{
+    list-style: none;
+    padding-right: 10%;
+}
+.teste ul li
+{
+    width: 120px;
+}
+.teste a
+{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+.teste ul ul
+{
+    position: absolute;
+    visibility: hidden;
+}
+.teste ul li:hover ul
+{
+    visibility: visible;
+}
+.teste ul ul li
+{
+    border-bottom: solid 1px #ccc;
+    width: 200px;
+}
+#paginacao li
+{
+    font-size: 25px;
+    list-style: none;
+    float: left;
+    padding-left: 6%;
+    margin-left: 10%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+#paginacao li a
+{
+    color: white;
+    cursor: pointer;
+}
+#paginacao li a:hover
+{
+    color: yellow;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 1440px)
+{
+    h3
+    {
+        font-size: 40px;
+    }
+    .wrapper
+    {
+        font-size: 30px;
+    }
+    .wrapper label
+    {
+        font-size: 40px;
+    }
+    .wrapper input
+    {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    .wrapper select
+    {
+        font-size: 20px;
+    }
+    .wrapper input[type=submit]
+    {
+        margin-top: 40px;
+        font-size: 40px;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    .teste
+    {
+        font-size: 20px;
+    }
+    .teste ul ul li
+    {
+        border-bottom: solid 1px #ccc;
+        width: 150px;
+    }
+    img
+    {
+        height: 40px;
+        width: 40px;
+    }
+}
+@media screen and (max-width: 475px)
+{
+    .titulo
+    {
+        font-size: 35px;
+    }
+    #titulo
+    {
+        font-size: 30px;
+    }
+    .wrapper
+    {
+        font-size: 15px;
+    }
+    #estado
+    {
+        font-size: 20px;
+    }
+    .wrapper table
+    {
+        width: 100%;
+
+    }
+    .wrapper td
+    {
+        float: left;
+        margin-left: 20%;
+    }
+    .wrapper select
+    {
+        margin-left: 22%;
+    }
+    .wrapper input[type=submit]
+    {
+        margin-left: 35%;
+    }
+    .teste
+    {
+        font-size: 20px;
+    }
+    .teste ul ul li
+    {
+        border-bottom: solid 1px #ccc;
+        width: 100px;
+    }
+    img
+    {
+        height: 37px;
+        width: 37px;
+    }
+    #table_hist
+    {
+        font-size: 15px;
+    }
+    #table_hist td
+    {
+        width: 33%;
+        float: none;
+    }
+    #paginacao li
+    {
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width: 320px){
+    #logo
+    {
+        width: 50px;
+        height: 50px;
+    }
+    #titulo
+    {
+        font-size: 25px;
+    }
+    .titulo
+    {
+        margin-left: 10px;
+        font-size: 25px;
+    }
+    .nav-container li
+    {
+        font-size: 20px;
+    }
+    .wrapper select
+    {
+        margin-left: 0;
+    }
+    .wrapper input[type=submit]
+    {
+        margin-left: 0;
+    }
+    #tabela_index td
+    {
+        margin-left: 0;
+    }
+    #tabela_index select
+    {
+        margin-left: 30%;
+    }
+    #tabela_index input[type=submit]
+    {
+        margin-left: 50%;
+    }
+    .teste
+    {
+        font-size: 20px;
+    }
+    img
+    {
+        height: 37px;
+        width: 37px;
+    }
+    #table_hist
+    {
+
+        font-size: 13px;
+    }
+    #table_hist td
+    {
+        width: 33%;
+        float: none;
+    }
+    #paginacao li
+    {
+        margin-left: 3%;
+    }
+}

@@ -1,0 +1,13 @@
+	
+
+
+
+
+
+
+  <?php
+                if(isset($msg) and $msg == 1)
+                {
+                    echo "<h3 align='left'>E-mail já cadastrado!</h3>";
+                }
+                ?>

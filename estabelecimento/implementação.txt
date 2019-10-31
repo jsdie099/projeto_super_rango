@@ -1,0 +1,4 @@
+Fazer por meio de requisições ao banco de dados, para os pedidos aparecerem em tempo real para a tela
+do estabelecimento, também incrementar a barra navegável para ser mais flexível.
+
+Adicionar paginação no histórico de pedidos do estabelecimento

@@ -1,0 +1,455 @@
+html
+{
+    font-family: "Times New Roman";
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background: url("../img/thumbnail_Fundo food.jpg");
+    background-size: cover;
+}
+#logo
+{
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-top: 30px;
+    padding-left: 50px;
+}
+
+header
+{
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+nav
+{
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    display: block;
+    z-index: 1;
+}
+nav:after
+{
+    clear: both;
+    content: "";
+    display: block;
+}
+#titulo
+{
+    text-align: center;
+    margin-top: 50px;
+    padding-left: 1%;
+    font-size: 30px;
+    alignment: center;
+    color: white;
+}
+.container
+{
+    height: 100px;
+    margin-bottom: 100px;
+}
+.nav-container
+{
+    height: 135px;
+    width: 100%;
+    background: url("../img/thumbnail_Fundo food2.jpg");
+    padding-right: 20%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.nav-container ul
+{
+    float: right;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 25px;
+}
+.nav-container li
+{
+    list-style: none;
+    float: left;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    opacity: 0.8;
+
+}
+.nav-container li a
+{
+    height: 50%;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.nav-container li a:hover
+{
+    color: orange;
+}
+#titulo
+{
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 40px;
+}
+.titulo
+{
+    margin-bottom: 30px;
+}
+.wrapper
+{
+    text-align: center;
+    color: white;
+}
+.wrapper table
+{
+    width: 100%;
+}
+.wrapper td
+{
+    width: 50%;
+}
+
+.wrapper label
+{
+    color: white;
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 300;
+}
+.wrapper input
+{
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 15px;
+    text-align: center;
+}
+
+.wrapper input[type=submit]
+{
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 30px;
+
+}
+.wrapper input[type=submit]:hover
+{
+    background-color: orange;
+}
+.wrapper a
+{
+    text-decoration: none;
+    color: yellow;
+}
+.bloco
+{
+    width: 100%;
+
+    float: left;
+}
+#forma
+{
+    margin: 150px;
+}
+#esquerda
+{
+    float: left;
+    width: 50%;
+}
+#direita
+{
+    float: right;
+    width: 50%;
+}
+#table_preco
+{
+    width: 100%;
+    padding-right: 20%;
+}
+
+p
+{
+    padding-top: 200px;
+    font-size: 35px;
+}
+
+#table_index input[type=submit]
+{
+    margin-right: 1%;
+}
+
+
+#cartao
+{
+    margin-right: 35%;
+}
+#dinheiro
+{
+    margin-left: 30%;
+}
+#table_hist
+{
+    width: 90%;
+    margin: auto;
+}
+#table_hist td
+{
+    width: 32%;
+    height: 50px;
+}
+#table_hist a
+{
+    font-size: 20px;
+}
+#pedido input[type=submit]
+{
+    margin-left: 6%;
+}
+#paginacao li
+{
+    font-size: 25px;
+    list-style: none;
+    float: left;
+    padding-left: 6%;
+    margin-left: 10%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /*style='list-style: none; float: left; margin: 10px; margin-left: 40%;'*/
+}
+#paginacao li a
+{
+    color: white;
+    cursor: pointer;
+}
+#paginacao li a:hover
+{
+    color: yellow;
+}
+
+
+
+
+
+@media screen and (min-width: 1440px){
+    .titulo
+    {
+        font-size: 50px;
+    }
+    .wrapper h1,h2
+    {
+        font-size: 40px;
+    }
+    .wrapper label
+    {
+        font-size: 35px;
+        padding-bottom: 20px;
+
+    }
+    .wrapper input
+    {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .wrapper input[type=submit]
+    {
+        clear: both;
+        margin-top: 100px;
+        font-size: 40px;
+    }
+
+
+
+}
+@media screen and (max-width: 768px)
+{
+    #table_index input[type=submit]
+    {
+        margin-right: 1%;
+    }
+    #forma
+    {
+        margin: 50px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #esquerda
+    {
+        float: left;
+        width: 100%;
+    }
+    #direita
+    {
+        width: 100%;
+        float: right;
+    }
+    #titulo
+    {
+        font-size: 30px;
+    }
+    nav
+    {
+        position: relative;
+    }
+    .nav-container li
+    {
+        line-height: 30px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    h1
+    {
+        font-size: 25px;
+    }
+    #forma
+    {
+        margin: 0;
+    }
+    #cartao
+    {
+        margin-right: 0;
+    }
+    #dinheiro
+    {
+        margin-left: 0;
+    }
+    #paginacao li
+    {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    #logo
+    {
+        clear: both;
+        width: 50px;
+        height: 50px;
+        margin-top: 40px;
+        margin-left: 0;
+        margin-right: 5px;
+    }
+    #titulo
+    {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    nav
+    {
+        position: relative;
+        width: auto;
+    }
+    .nav-container ul
+    {
+        line-height: 70px;
+        font-size: 20px;
+        padding: 0;
+    }
+    #forma
+    {
+        margin: 0;
+    }
+    #cartao
+    {
+        margin-right: 0;
+    }
+    #dinheiro
+    {
+        margin-left: 0;
+
+    }
+    #table_add td
+    {
+        float: left;
+    }
+    #table_add label,input
+    {
+        margin-right: 70px;
+    }
+    .wrapper input
+    {
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 18px;
+        margin: 0 8px;
+    }
+    .wrapper input[type=submit]
+    {
+        clear: both;
+        font-size: 20px;
+        margin-right: 10%;
+    }
+    #esquerda
+    {
+        float: left;
+        width: 100%;
+    }
+    #direita
+    {
+        width: 100%;
+        float: right;
+    }
+    #table_preco
+    {
+        width: 100%;
+        padding-right: 10%;
+    }
+    #pedido input[type=submit]
+    {
+        margin-left: 7%;
+    }
+    h1
+    {
+        font-size: 20px;
+    }
+    .nav-container li
+    {
+        line-height: 30px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    p
+    {
+        padding-top: 50px;
+        font-size: 20px;
+    }
+    #table_index input[type=submit]
+    {
+        margin-right: 0;
+    }
+    #table_hist
+    {
+        width: 90%;
+        margin: auto;
+        font-size: 15px;
+    }
+    #table_hist td
+    {
+        width: 32%;
+    }
+    #table_hist a
+    {
+        font-size: 20px;
+    }
+    #paginacao li
+    {
+        margin-left: 3%;
+    }
+}

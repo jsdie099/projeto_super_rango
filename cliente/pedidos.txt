@@ -1,0 +1,27 @@
+criar uma página para o usuário poder ver todo o seu histórico de pedidos,
+e mostrar na última coluna o status dos pedidos de acordo, apresentar uma opção 
+para acompanhar os pedidos em andamento ainda, usar uma variável para receber as strings
+"Pedido pendente <a href="pedido_entrega">Acompanhar pedido>" de acordo com o status de cada
+um, use um switch case para realizar a parte de cima switch($status)
+case 0:
+case 1:
+case 2:
+case 3:
+case 4:
+
+
+
+
+Criar a opção de cancelar pedido caso o pedido não tenha sido aceito pelo estabelecimento.
+fazer a tela de histórico ser navegável por páginas.
+
+dar update em mais um atributo do 
+pedido (criar atributo 'forma' que recebe a forma de entrega) quando o cliente escolher
+retirada ou delivery, e só deve aparecer para o funcionário que aceita e nega os pedidos
+
+
+inserir quantidade limite de alimentos a 30 no máximo e mínimo 1 por pedido
+limitar dinheiro para troco pelo menos no valor do pedido
+
+
+inserir botão de confirmação ao clicar para sair da conta, utilizar bootstrap
