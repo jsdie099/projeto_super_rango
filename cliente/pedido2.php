@@ -13,16 +13,18 @@
     ($_GET['id']==base64_encode($_SESSION['id']))?$id = base64_decode($_GET['id']):$id=$_SESSION['id'];
     $db = open_database();
 
-    $sql = "select * from pedido where id_cliente = ".$id;
-    $exec = $db->query($sql);
-    $rows = $exec->num_rows;
+    $sql = "select * from pedido where id_cliente = ?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id);
+    $exec->execute();
+    $results = $exec->get_result();
+    $rows = $results->num_rows;
     if($rows>0)
     {
-        while ($dados = $exec->fetch_object())
+        while ($dados = $results->fetch_object())
         {
             $total = $dados->preco;
             $tipo = $dados->tipo;
-
         }
     }
     $sql2 = "select * from pedido where status = 1";
@@ -147,12 +149,15 @@
 
             <?php
                 ($_GET['id']==base64_encode($_SESSION['id']))?$id = base64_decode($_GET['id']):$id=$_SESSION['id'];
-                $sql = "select * from usuario where id=".$id;
-                $exec = $db->query($sql);
-                $rows = $exec->num_rows;
+                $sql = "select * from usuario where id=?";
+                $exec = $db->prepare($sql);
+                $exec->bind_param("i",$id);
+                $exec->execute();
+                $results = $exec->get_result();
+                $rows = $results->num_rows;
                 if($rows>0)
                 {
-                    while ($dados = $exec->fetch_object())
+                    while ($dados = $results->fetch_object())
                     {
                         $id = base64_encode($_SESSION['id']);
                         $_SESSION['pedido'] = "<h2><a href='pedido2.php?id=$id'>Retornar ao pedido</a></h2>";

@@ -62,7 +62,7 @@
             $exec->execute();
             $results = $exec->get_result();
             $rows = $results->num_rows;
-            $sql = "select * from pedido where id_cliente=?";
+            $sql = "select * from pedido where id_cliente=? order by id desc";
             $execa=$db->prepare($sql);
             $execa->bind_param("i",$id);
             $execa->execute();
