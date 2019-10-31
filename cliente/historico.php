@@ -60,9 +60,9 @@
             $exec = $db->prepare($sql);
             $exec->bind_param("i",$id);
             $exec->execute();
-            $results = $exec->get_result();
-            $rows = $results->num_rows;
-            $sql = "select * from pedido where id_cliente=? order by id desc";
+            $results1 = $exec->get_result();
+            $rows = $results1->num_rows;
+            $sql = "select * from pedido where id_cliente=?";
             $execa=$db->prepare($sql);
             $execa->bind_param("i",$id);
             $execa->execute();
@@ -71,7 +71,7 @@
             $num_paginas = ceil($num_total/$itens_por_pagina);
             if($rows>0)
             {
-                echo "<p style='margin-top: 0;'>
+                echo "<p style='margin-top: 0; padding-top: 20px;'>
             Aqui estão Todos os seus pedidos,<br> você pode acompanhar os que ainda estão em aberto. =)
         </p>
                 <table border=\"1\"id=\"table_hist\"><tr>
@@ -85,7 +85,7 @@
                     <h3>Status</h3>
                 </td>
             </tr>";
-                while ($dados = $results->fetch_object())
+                while ($dados = $results1->fetch_object())
                 {
 
                     $id_pedido = base64_encode($dados->id);

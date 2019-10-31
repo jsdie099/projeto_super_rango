@@ -21,7 +21,7 @@ if(isset($_POST) and !empty($_POST))
     $pedido ->setQuantidade($_POST['campo2']);
     $pedido ->getQuantidade();
     $num = $pedido->getNum();
-
+    $qtd = $pedido->getQuantidade();
     $db = open_database();
 
 
@@ -33,17 +33,23 @@ if(isset($_POST) and !empty($_POST))
         while ($dados = $exec_a->fetch_object())
         {
             $id_a = $dados->id;
+
             $preco_al = $dados->preco;
             if($num == $id_a && $pedido->getQuantidade()<=30)
             {
+
                 $pedido ->setValor($preco_al);
                 $total = $pedido ->getQuantidade()*$pedido->getValor();
-                $sql = "insert into pedido(id,id_cliente,tipo,preco,quantidade,status)
-                                        values(null ,".$id.",".$num.",".$total.",".$pedido->getQuantidade().",1)";
-                $exec = $db->query($sql);
+                $sql = "insert into pedido(id_cliente,tipo,preco,quantidade,status) values(?,?,?,?,1)";
+                $exec = $db->prepare($sql);
+                $exec->bind_param("iidi",$id,$num,$total,$qtd);
+                $exec->execute();
 
+                header('location:pedido2.php?id='.$id);
+
+                //values(null ,".$id.",".$num.",".$total.",".$pedido->getQuantidade().",1)"
                 //status 1 = aguardando aprovação, status 2 = pedido aprovado, status 3 = saiu para entrega, status 4 = pedido chegou, status 0 = pedido negado
-                header('location:pedido2.php?id='.base64_encode($_SESSION['id']));
+
             }
             else
             {
