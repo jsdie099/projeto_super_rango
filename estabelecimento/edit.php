@@ -1,3 +1,45 @@
+<?php
+require_once "config.php";
+include DBAPI;
+if(!isset($_SESSION))
+{
+    session_start();
+}
+$id=$_GET['id'];
+$db = open_database();
+$sql1 = "select * from alimento where id = ?";
+$exec1 = $db->prepare($sql1);
+$exec1->bind_param("i",$id);
+$exec1->execute();
+$results1 = $exec1->get_result();
+$rows = $results1->num_rows;
+if($rows>0)
+{
+    while ($dados = $results1->fetch_object())
+    {
+        $descricao = $dados->descricao;
+        $preco = $dados->preco;
+    }
+}
+
+
+if(isset($_POST) and !empty($_POST)) {
+
+    $campo1 = $_POST['campo1'];
+    $campo2 = (double)$_POST['campo2'];
+
+    $sql = "update alimento set descricao = ?,preco=? where id=?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("sdi",$campo1,$campo2,$id);
+    $exec->execute();
+    $_SESSION['edit']="<h2 align='center'>Alimento Editado com Sucesso!</h2>";
+    header('location:cardapio.php');
+    $_SESSION['edit'] = "<h2 align='center'>Alimento Editado com sucesso!</h2>";
+
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,20 +55,21 @@
         <nav class="nav-container">
             <a href="telafunc.php"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a>
             <h1 id="titulo">SUPER RANGO</h1>
-            <ul>
-                <li>
-                    <a href="telafunc.php">Pedidos</a>
-                </li>
-                <li>
-                    <a href="historico.php">Histórico de Pedidos</a>
-                </li>
-                <li>
-                    <a href="cardapio.php">Cardápio</a>
-                </li>
-                <li>
-                    <a href="session_destroy.php">Sair</a>
-                </li>
-            </ul>
+            <div class="teste">
+                <ul>
+                    <li>
+                        <a href="#"><h3>Opções</h3></a>
+                        <ul>
+                            <li>
+                                <a href="telafunc.php">Pedidos</a>
+                                <a href="historico.php">Histórico de Pedidos</a>
+                                <a href="cardapio.php">Cardápio</a>
+                                <a href="session_destroy.php">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 </div>
@@ -38,10 +81,11 @@
         <tr>
             <td>
                 <form action="" method="post">
-                    <label>
-                        <input type="text" name="campo1" required placeholder="Nome do alimento"></label><br><br>
-                    <label>
-                        <input type="number" step="any" name="campo2" required placeholder="Preço do alimento"></label><br><br>
+                    <label>Nome do alimento:<br>
+                        <input type="text" name="campo1" required value="<?=$descricao?>">
+                    </label><br><br>
+                    <label>Preço do alimento:<br>
+                        <input type="number" step="any" name="campo2" value="<?=$preco?>"></label><br><br>
                     <input type="submit" value="Enviar"><br>
                 </form>
             </td>
@@ -51,24 +95,3 @@
 </div>
 </body>
 </html>
-<?php
-require_once "config.php";
-include DBAPI;
-if(!isset($_SESSION))
-{
-    session_start();
-}
-$id=$_GET['id'];
-if(isset($_POST) and !empty($_POST)) {
-
-    $campo1 = $_POST['campo1'];
-    $campo2 = (double)$_POST['campo2'];
-    $db = open_database();
-    $sql = "update alimento set descricao = '$campo1',preco='$campo2' where id='$id'";
-    $exec = $db->query($sql);
-    $_SESSION['edit']="<h2 align='center'>Alimento Editado com Sucesso!</h2>";
-    header('location:cardapio.php');
-    $_SESSION['edit'] = "<h2 align='center'>Alimento Editado com sucesso!</h2>";
-}
-
-?>
