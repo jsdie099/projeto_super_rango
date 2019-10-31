@@ -18,20 +18,41 @@ if(!empty($_POST) and isset($_POST))
     $cli->setCidade($_POST['cidade']);
     $cli->setCep($_POST['cep']);
 
+    $nome = $cli->getNomeCli();
+    $cpf = $cli->getCpfCli();
+    $celular = $cli->getNumCel();
+    $email = $cli->getEmail();
+    $rua = $cli->getRua();
+    $num_rua = $cli->getNumero();
+    $bairro = $cli->getBairro();
+    $complemento = $cli->getComplemento();
+    $cidade = $cli->getCidade();
+    $cep = $cli->getCep();
+
+
+
     $db = open_database();
-    $sql = "select * from usuario where email = '".$cli -> getEmail()."' ";
-    $exec = $db->query($sql);
-    $rows = $exec->num_rows;
+    $sql = "select * from usuario where email = ?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("s",$email);
+    $exec->execute();
+    $results = $exec->get_result();
+    $rows = $results->num_rows;
     if($rows>0)
     {
         $msg = 1;
     }
     else
     {
-        $sql = "INSERT INTO usuario(id, nome, cpf, celular, email, rua, numero, bairro, complemento, cidade, cep) 
-VALUES (null,'".$cli->getNomeCli()."','".$cli->getCpfCli()."','".$cli->getNumCel()."','".$cli->getEmail()."','".$cli->getRua()."'
-,'".$cli->getNumero()."','".$cli->getBairro()."','".$cli->getComplemento()."','".$cli->getCidade()."','".$cli->getCep()."')";
-        $exec = $db->query($sql);
+        $sql = "INSERT INTO usuario(nome, cpf, celular, email, rua, numero, bairro, complemento, cidade, cep) 
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $exec = $db->prepare($sql);
+        $exec->bind_param("ssssssssss",$nome,$cpf,$celular,$email,$rua,$num_rua,$bairro,$complemento,$cidade,$cep);
+        $exec->execute();
+        //VALUES (null,'".$cli->getNomeCli()."','".$cli->getCpfCli()."','".$cli->getNumCel()."','".$cli->getEmail()."','".$cli->getRua()."'
+        //,'".$cli->getNumero()."','".$cli->getBairro()."','".$cli->getComplemento()."','".$cli->getCidade()."','".$cli->getCep()."')";
+        //        $exec = $db->query($sql);
+
         header('location:login.php');
 
     }
