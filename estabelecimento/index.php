@@ -19,9 +19,9 @@ if(isset($_POST) and !empty($_POST))
     $exec = $db->prepare($sql);
     $exec->bind_param("sss",$tipo,$nome,$cpf);
     $exec->execute();
-    //$sql = " select * from funcionario where tipo = '".$func->getTipo()."' and nome = '".$func->getNome()."' and cpf = '".$func->getCpf()."'";
     $results = $exec->get_result();
     $rows = $results->num_rows;
+
     if($rows>0 && $func->getTipo()==1)
     {
         while (($dados = $results->fetch_object()))
@@ -33,7 +33,6 @@ if(isset($_POST) and !empty($_POST))
             $_SESSION['logado_f']= $dados->nome;
             header('location:telafunc.php');
         }
-
     }
     else
     {
@@ -50,7 +49,6 @@ if(isset($_POST) and !empty($_POST))
             $_SESSION['logado_f'] = $dados->nome;
             header('location:entregador.php');
         }
-
     }
     else
     {
@@ -75,7 +73,6 @@ if(isset($_POST) and !empty($_POST))
     </script>
 </head>
 <body>
-
     <div class="container">
         <header>
             <nav class="nav-container">
@@ -84,7 +81,6 @@ if(isset($_POST) and !empty($_POST))
             </nav>
         </header>
     </div>
-
     <div class="wrapper">
         <h1 class="titulo">Nome do Estabelecimento</h1>
         <hr>
@@ -105,15 +101,11 @@ if(isset($_POST) and !empty($_POST))
                 </tr>
                 <tr>
                     <td>
-
                             <label for="nome">Nome:<br>
                             <input type="text" name="nome" required placeholder="Nome"></label><br>
                             <label for="cpf">CPF: <br>
                             <input type="text" name="cpf" id="cpf" required placeholder="CPF"></label><br>
-
                             <input type="submit" value="Enviar">
-
-
                                 <?php
                                     if(isset($msg) and $msg == 1)
                                     {
