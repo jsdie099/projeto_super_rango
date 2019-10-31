@@ -56,12 +56,18 @@
             }
             $pagina = $_GET['pagina'];
             $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
-            $sql = "select * from pedido where id_cliente=".$id." order by id desc limit {$inicio},{$itens_por_pagina}";
-            $exec = $db->query($sql);
-            $rows = $exec->num_rows;
-            $sql = "select * from pedido where id_cliente={$id}";
-            $execa = $db->query($sql);
-            $num_total = $execa->num_rows;
+            $sql = "select * from pedido where id_cliente=? order by id desc limit {$inicio},{$itens_por_pagina}";
+            $exec = $db->prepare($sql);
+            $exec->bind_param("i",$id);
+            $exec->execute();
+            $results = $exec->get_result();
+            $rows = $results->num_rows;
+            $sql = "select * from pedido where id_cliente=?";
+            $execa=$db->prepare($sql);
+            $execa->bind_param("i",$id);
+            $execa->execute();
+            $results = $execa->get_result();
+            $num_total = $results->num_rows;
             $num_paginas = ceil($num_total/$itens_por_pagina);
             if($rows>0)
             {
@@ -79,7 +85,7 @@
                     <h3>Status</h3>
                 </td>
             </tr>";
-                while ($dados = $exec->fetch_object())
+                while ($dados = $results->fetch_object())
                 {
 
                     $id_pedido = base64_encode($dados->id);
