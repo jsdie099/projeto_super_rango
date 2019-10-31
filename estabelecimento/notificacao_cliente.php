@@ -30,14 +30,19 @@ $sql = "select * from pedido where status = 2";
 
 if($entrega->getTipo()==1)
 {
-    $sql = "update pedido set status = 3 where id = ".$id;
-    $exec = $db->query($sql);
+    $sql = "update pedido set status = 3 where id = ?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id);
+    $exec->execute();
 
 }
 if($entrega->getTipo()==2)
 {
-    $sql = "update pedido set status = 4 where id = ".$id;
-    $exec = $db->query($sql);
+    $sql = "update pedido set status = 4 where id=?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id);
+    $exec->execute();
+
 }
 ?>
 <!DOCTYPE html>

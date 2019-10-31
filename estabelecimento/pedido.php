@@ -12,12 +12,13 @@ include DBAPI;
     $_SESSION['logado_f'];
     $id = $_GET['id'];
     $db = open_database();
-    $sql = "update pedido set status = 2 where id = ".$id;
-    $exec = $db->query($sql);
+    $sql = "update pedido set status = 2 where id = ?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id);
+    $exec->execute();
     $sql2 = "select * from pedido where status = 2";
     $exec2 = $db->query($sql2);
     $rows = $exec2->num_rows;
-
         if($rows>0)
         {
             while ($dados = $exec2->fetch_object())
@@ -38,7 +39,7 @@ include DBAPI;
                        
                     
                 ";
-                if(isset($_POST) and !empty($_POST))
+                if(isset($_POST) and !empty($_POST) and $forma=='entrega')
                 {
                     header('location:notificacao.php?id='.$id);
                 }
