@@ -1,5 +1,5 @@
 <?php
-include "../clientea/config.php";
+include "config.php";
 include DBAPI;
 if(!isset($_SESSION))
 {

@@ -1,5 +1,5 @@
 <?php
-include "../clientea/config.php";
+include "config.php";
 class Entrega
 {
     private $tipo;

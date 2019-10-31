@@ -3,7 +3,7 @@ if(!isset($_SESSION))
 {
     session_start();
 }
-    require_once "../clientea/config.php";
+    require_once "config.php";
     require_once DBAPI;
     $db = open_database();
     $sql = "select * from pedido where status=1";
@@ -18,14 +18,14 @@ if(!isset($_SESSION))
                 $preco = $dados->preco;
                 $final = number_format($preco,2);
                 $qtd = $dados->quantidade;
-                $forma = strtoupper($dados->forma);
-                    echo  "<table width='80%'>
+                $forma = $dados->forma;
+                    echo  "<table>
                             <tr>
                                 <td>
                                    <h5>Pedido N° 
                                    $num:</h5>
                                     (lanche pedido: $tipo, 
-                                   preço: R$ $final<br> $qtd unidades,$forma)<br><br>
+                                   preço: R$ $final<br> $qtd unidades, $forma)<br><br>
                                    
                                 </td>
                                 <td>
@@ -36,6 +36,7 @@ if(!isset($_SESSION))
                                 <a href='excluir_pedido.php?id=$num'><img src='img/images.png' width='7%'></a>
                                 </h5>
                                 </td>
+                                <br>
                             </tr>
                         </table>";
                 }

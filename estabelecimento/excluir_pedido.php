@@ -1,5 +1,5 @@
 <?php
-    include "../clientea/config.php";
+    include "config.php";
     include DBAPI;
     $id = $_GET['id'];
     $db = open_database();

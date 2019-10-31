@@ -1,6 +1,5 @@
 ﻿<?php
-    include "../clientea/config.php";
-    include DBAPI;
+
     if(!isset($_SESSION))
     {
         session_start();

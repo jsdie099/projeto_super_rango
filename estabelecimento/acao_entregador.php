@@ -3,7 +3,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-require_once "../clientea/config.php";
+require_once "config.php";
 require_once DBAPI;
  $db = open_database();
  $sql = "select * from pedido where status between 2 and 3 and forma='entrega'";

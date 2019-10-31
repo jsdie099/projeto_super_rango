@@ -52,7 +52,7 @@
 </body>
 </html>
 <?php
-require_once "../clientea/config.php";
+require_once "config.php";
 include DBAPI;
 if(!isset($_SESSION))
 {
