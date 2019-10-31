@@ -13,14 +13,19 @@ if(!isset($_SESSION['logado']))
 $_SESSION['logado'];
 $db = open_database();
 $id = base64_decode($_GET['id']);
-$sql = "update pedido set forma='retirada' where id=$id";
-$exec = $db->query($sql);
-$sql = "select * from pedido where id = ".$id;
-$exec = $db->query($sql);
-$rows = $exec->num_rows;
+$sql = "update pedido set forma='retirada' where id=?";
+$exec = $db->prepare($sql);
+$exec->bind_param("i",$id);
+$exec->execute();
+$sql = "select * from pedido where id=?";
+$exec = $db->prepare($sql);
+$exec->bind_param("i",$id);
+$exec->execute();
+$results = $exec->get_result();
+$rows = $results->num_rows;
 if($rows>0)
 {
-    while ($dados = $exec->fetch_object())
+    while ($dados = $results->fetch_object())
     {
 
         $_SESSION['status'] = $dados->status;

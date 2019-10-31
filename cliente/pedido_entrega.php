@@ -33,16 +33,25 @@
     ($_GET['id_cliente']==base64_encode($_SESSION['id']))?$id_cliente = base64_decode($_GET['id_cliente']):$id_cliente=$_SESSION['id'];
 
     $id = base64_encode($_SESSION['id']);
+    $id_pedido = base64_decode($_GET['id']);
     $_SESSION['logado'];
     $db = open_database();
-    $sql = "update pedido set forma='entrega' where id=".base64_decode($_GET['id']);
+    $sql = "update pedido set forma='entrega' where id=?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id_pedido);
+    $exec->execute();
     $exec = $db->query($sql);
-    $sql = "select * from pedido where id = ".base64_decode($_GET['id']);
-    $exec = $db->query($sql);
-    $rows = $exec->num_rows;
+
+
+    $sql = "select * from pedido where id=?";
+    $exec = $db->prepare($sql);
+    $exec->bind_param("i",$id_pedido);
+    $exec->execute();
+    $results = $exec->get_result();
+    $rows = $results->num_rows;
     if($rows>0)
     {
-        while ($dados = $exec->fetch_object())
+        while ($dados = $results->fetch_object())
         {
 
             $_SESSION['status'] = $dados->status;
@@ -57,84 +66,7 @@
             }*/
         }
     }
-    /*
-     *
-    if($status==1)
-    {
-        echo "<script>
-           window.onload = function sweetalertclick() 
-           {
-                Swal.fire(
-                    'Seu pedido está aguardando aprovação',
-                    'Mantenha-se nessa página para ser notificado',
-                    ''
-                )
-            }
-            </script>";
-    }
-    if($status==2)
-    {
-        echo "<script>
-               window.onload = function sweetalertclick() 
-               {
-                    Swal.fire(
-                        'Seu pedido foi aprovado',
-                        'em breve o entregador mandará notificações',
-                        ''
-                    )
-                }
-                </script>";
-    }
-    if($status==3)
-    {
-        echo "<script>
-               window.onload = function sweetalertclick() 
-               {
-                    Swal.fire(
-                        'O entregador já saiu com a sua entrega',
-                        '',
-                        ''
-                    )
-                }
-                </script>";
-    }
-    if($status==4)
-    {
-        echo "<script>
-               window.onload = function sweetalertclick() 
-               {
-                    Swal.fire(
-                        'O entregador está aguardando em frente ao seu endereço',
-                        'Seu pedido chegou =)',
-                        ''
-                    )
-                }
-                </script>";
-    }*/
 
-
-    /*if($status == 1){
-        echo "<script>
-                    alert('Seu pedido está aguardando aprovação');
-                    </script>";
-    }
-    if($status == 2){
-        echo "<script>
-                    alert('Seu pedido foi aprovado, em breve será entregue');
-                    </script>";
-    }
-    if($status == 3){
-        echo "<script>
-                    alert('O entregador já saiu com a sua entrega');
-                    </script>";
-    }
-    if($status == 4){
-        echo "<script>
-                    alert('O entregador está aguardando em frente ao seu endereço');
-                    </script>";
-
-
-}*/
 ?>
 
 
