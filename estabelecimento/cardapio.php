@@ -7,7 +7,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang"pt-br>
+<html lang="pt-br">
 <head>
     <title>Tela de Pedidos</title>
     <meta charset="UTF-8">
