@@ -10,7 +10,7 @@
         $nome = $_POST['campo1'];
         $preco = $_POST['campo2'];
         $db = open_database();
-        $sql = "insert into alimento(descricao,preco) values (?,?)";
+        $sql = "insert into alimento(id,descricao,preco) values ((select max(id)+1 from alimento alim),?,?)";
         $exec = $db->prepare($sql);
         $exec->bind_param("sd",$nome,$preco);
         $exec->execute();
