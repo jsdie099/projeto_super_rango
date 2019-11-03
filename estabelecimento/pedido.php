@@ -10,7 +10,7 @@ include DBAPI;
         header('location:index.php');
     }
     $_SESSION['logado_f'];
-    $id = $_GET['id'];
+    $id = base64_decode($_GET['id']);
     $db = open_database();
     $sql = "update pedido set status = 2 where id = ?";
     $exec = $db->prepare($sql);
@@ -41,7 +41,7 @@ include DBAPI;
                 ";
                 if(isset($_POST) and !empty($_POST) and $forma=='entrega')
                 {
-                    header('location:notificacao.php?id='.$id);
+                    header('location:notificacao.php');
                 }
                 if(isset($_POST) and !empty($_POST) and $forma=='retirada')
                 {

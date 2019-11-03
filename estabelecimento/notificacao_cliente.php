@@ -24,7 +24,7 @@ if(!isset($_SESSION['logado_f']))
     header('location:index.php');
 }
 $_SESSION['logado_f'];
-$id = $_GET['id'];
+$id = base64_decode($_GET['id']);
 $db = open_database();
 $sql = "select * from pedido where status = 2";
 

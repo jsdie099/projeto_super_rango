@@ -13,7 +13,7 @@ if(!isset($_SESSION))
         {
             while ($dados = $exec->fetch_object())
             {
-                $num = $dados->id;
+                $num = base64_encode($dados->id);
                 $tipo = $dados->tipo;
                 $preco = $dados->preco;
                 $final = number_format($preco,2);
@@ -23,7 +23,7 @@ if(!isset($_SESSION))
                             <tr>
                                 <td>
                                    <h5>Pedido N° 
-                                   $num:</h5>
+                                   $dados->id:</h5>
                                     (lanche pedido: $tipo, 
                                    preço: R$ $final<br> $qtd unidades, $forma)<br><br>
                                    

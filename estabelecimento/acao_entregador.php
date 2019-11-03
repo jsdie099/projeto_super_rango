@@ -13,7 +13,7 @@ require_once DBAPI;
  {
      while ($dados = $exec->fetch_object())
      {
-         $id = $dados->id;
+         $id = base64_encode($dados->id);
          $id_cliente = $dados->id_cliente;
          $tipo = $dados->tipo;
          $preco = $dados->preco;
@@ -22,7 +22,7 @@ require_once DBAPI;
          $status = $dados->status;
 
          $parte1 =    "
-                                       <h3 id='estado'>Pedido $id do dia:<br>
+                                       <h3 id='estado'>Pedido $dados->id do dia:<br>
                                        (lanche pedido: $tipo, preço R$ $final, $qtd unidades)</h3>
                            
                                 ";
