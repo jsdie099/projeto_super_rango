@@ -71,7 +71,7 @@ if($entrega->getTipo()==2)
         </header>
     </div>
     <div class="wrapper">
-    
+
         <h1 class="titulo">Status do Pedido:</h1><br>
 
         <table>

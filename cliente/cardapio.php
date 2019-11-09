@@ -94,18 +94,7 @@ if(isset($_POST) and !empty($_POST))
         </header>
     </div>
 <div class="wrapper">
-    <table>
-        <tr>
-            <td>
-                <h1>Extrema-MG</h1>
-            </td>
-            <td>
-                <h1>Lista de Estabelecimentos</h1>
-            </td>
-        </tr>
-    </table>
-
-    <br><hr><br>
+   
 
     <h2>CARDÁPIO</h2><br>
     <table id="table_preco">
