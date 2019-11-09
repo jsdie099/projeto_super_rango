@@ -81,7 +81,7 @@ if(!empty($_POST) and isset($_POST))
         <header>
 
             <nav class="nav-container">
-                <a href="index.html"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a><br>
+                <a href="index.html"><img id="logo" src="img/logo.jpg" alt="Super Rango" title="Super Rango"></a><br>
                 <h1 id="titulo">SUPER RANGO</h1>
             </nav>
         </header>
