@@ -77,7 +77,7 @@ if(isset($_POST) and !empty($_POST))
     <div class="container">
         <header>
             <nav class="nav-container">
-                <?php $id = base64_encode($_SESSION['id']); echo "<a href=\"cardapio.php?id=$id\"><img id=\"logo\" src=\"img/logo.jpg\" alt=\"Super Rango\"></a><br>"; ?>
+                <?php $id = base64_encode($_SESSION['id']); echo "<a href=\"cardapio.php?id=$id\"><img id=\"logo\" src=\"img/logo.jpg\" alt=\"Super Rango\" title=\"Super Rango\"></a><br>"; ?>
                 <h1 id="titulo">SUPER RANGO</h1>
                 <ul>
                     <li>
@@ -94,7 +94,7 @@ if(isset($_POST) and !empty($_POST))
         </header>
     </div>
 <div class="wrapper">
-   
+
 
     <h2>CARDÁPIO</h2><br>
     <table id="table_preco">

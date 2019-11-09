@@ -25,3 +25,4 @@ limitar dinheiro para troco pelo menos no valor do pedido
 
 
 inserir botão de confirmação ao clicar para sair da conta, utilizar bootstrap
+

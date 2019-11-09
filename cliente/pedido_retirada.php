@@ -52,7 +52,7 @@ if($rows>0)
     <div class="container">
         <header>
             <nav class="nav-container">
-                <?php $id = base64_encode($_SESSION['id']);  echo "<a href=\"cardapio.php?id=$id\">
+                <?php $id = base64_encode($_SESSION['id']);  echo "<a href=\"cardapio.php?id=$id\" title=\"Cardápio\">
                 <img id=\"logo\" src=\"img/logo.jpg\" alt=\"Super Rango\"></a><br>";?>
                 <h1 id="titulo">SUPER RANGO</h1>
                 <ul>
