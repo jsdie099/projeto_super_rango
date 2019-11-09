@@ -16,7 +16,6 @@ if(!isset($_SESSION))
 }
 if(!empty($_POST) and isset($_POST))
 {
-
     $cli = new Cliente();
     $cli -> setEmail($_POST['email']);
     $cli -> setCpfCli(($_POST['cpfcli']));

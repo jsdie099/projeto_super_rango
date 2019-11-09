@@ -52,9 +52,7 @@ if(!empty($_POST) and isset($_POST))
         //VALUES (null,'".$cli->getNomeCli()."','".$cli->getCpfCli()."','".$cli->getNumCel()."','".$cli->getEmail()."','".$cli->getRua()."'
         //,'".$cli->getNumero()."','".$cli->getBairro()."','".$cli->getComplemento()."','".$cli->getCidade()."','".$cli->getCep()."')";
         //        $exec = $db->query($sql);
-
         header('location:login.php');
-
     }
 
 }

@@ -21,9 +21,32 @@ require_once DBAPI;
          $qtd = $dados->quantidade;
          $status = $dados->status;
 
+         $sql1 = "select * from usuario where id = {$id_cliente}";
+         $exec1 = $db->query($sql1);
+         if($exec1->num_rows>0)
+         {
+             while ($dados1 = $exec1->fetch_object())
+             {
+                 $nome = explode(" ",$dados1->nome);
+                 $nome_final = $nome[0];
+                 $rua = $dados1->rua;
+                 $bairro = $dados1->bairro;
+                 $numero = $dados1->numero;
+                 $cidade = $dados1->cidade;
+                 $complemento = "";
+                 if($dados1->complemento != null)
+                 {
+                     $complemento = $dados1->complemento.",";
+                 }
+
+
+
+             }
+         }
+
          $parte1 =    "
-                                       <h3 id='estado'>Pedido $dados->id do dia:<br>
-                                       (lanche pedido: $tipo, preço R$ $final, $qtd unidades)</h3>
+                                       <h3 id='estado'>Pedido $dados->id<br>
+                                       ($nome_final, $rua, $bairro, $numero, $cidade, $complemento R$ $final)</h3>
                            
                                 ";
          $parte2 = "

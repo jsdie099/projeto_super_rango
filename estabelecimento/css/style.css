@@ -383,7 +383,8 @@ nav:after
     }
     .wrapper input[type=submit]
     {
-        margin-left: 0;
+        margin-left: 20px;
+
     }
     #tabela_index td
     {
