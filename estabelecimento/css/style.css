@@ -136,8 +136,8 @@ nav:after
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 18px;
-    margin: 0 15px;
     text-align: center;
+
 }
 .wrapper select
 {
@@ -357,6 +357,7 @@ nav:after
     {
         margin-left: 5%;
     }
+
 }
 @media screen and (max-width: 320px){
     #logo
@@ -381,6 +382,7 @@ nav:after
     {
         margin-left: 0;
     }
+
     .wrapper input[type=submit]
     {
         margin-left: 20px;
@@ -420,5 +422,13 @@ nav:after
     #paginacao li
     {
         margin-left: 3%;
+    }
+    #vazio
+    {
+        margin-left: 10%;
+    }
+    .adc_alimento
+    {
+        margin-left: -20%;
     }
 }

@@ -82,8 +82,7 @@ if(isset($_POST) and !empty($_POST))
         </header>
     </div>
     <div class="wrapper">
-        <h1 class="titulo">Nome do Estabelecimento</h1>
-        <hr>
+
         <h1 class="titulo">Login do Funcionário</h1>
         <form action="" method="post">
 

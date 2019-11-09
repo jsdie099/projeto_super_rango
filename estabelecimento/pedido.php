@@ -83,9 +83,8 @@ include DBAPI;
     </div>
 
     <div class="wrapper">
-        <h1 class="titulo">Nome do Estabelecimento</h1>
-        <hr>
-        <h1 class="titulo">Pedidos Aprovados e em Processamento</h1>
+
+        <h1 class="titulo">Pedido em Processamento</h1>
             <table>
                 <tr>
                         <?php

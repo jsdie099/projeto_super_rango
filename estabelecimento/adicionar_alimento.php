@@ -52,8 +52,7 @@
     </header>
 </div>
     <div class="wrapper">
-        <h1 class="titulo">Nome do Estabelecimento</h1><br>
-        <hr>
+
         <h1 class="titulo">Adicionar um Alimento ao cardápio</h1><br><br>
         <?php
         if(isset($_SESSION['ok']))
@@ -67,9 +66,9 @@
                 <td>
                         <form action="" method="post">
                             <label>
-                            <input type="text" name="campo1" required placeholder="Nome do alimento"></label><br><br>
+                            <input type="text" name="campo1" class="adc_alimento" required placeholder="Nome do alimento"></label><br><br>
                             <label>
-                            <input type="number" step="any" name="campo2" required placeholder="Preço do alimento"></label><br><br>
+                            <input type="number" step="any" name="campo2" class="adc_alimento" required placeholder="Preço do alimento"></label><br><br>
                             <input type="submit" value="Enviar">
                         </form>
                 </td>

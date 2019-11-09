@@ -41,9 +41,6 @@
 </div>
     <div class="wrapper">
 
-                    <h1 class="titulo">Extrema-MG</h1>
-
-        <hr>
         <h1 class="titulo">CARDÁPIO</h1><br>
         <?php
             if(isset($_SESSION['delete']))

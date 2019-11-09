@@ -45,9 +45,6 @@ $_SESSION['logado_f'];
     </header>
 </div>
         <div class="wrapper">
-            <h1 class="titulo">Nome do Estabelecimento</h1>
-            <hr>
-            <h1 class="titulo">Status do Pedido:</h1>
 
             <table>
                 <tr>

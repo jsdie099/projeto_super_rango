@@ -46,7 +46,7 @@ if(!isset($_SESSION))
             echo "<table>
                         <tr>
                             <td>
-                               <h3>Nenhum pedido realizado até o momento!</h3><br><br>
+                               <h3 id='vazio'>Nenhum pedido no momento!</h3><br><br>
                             </td>
                         
                         </tr>

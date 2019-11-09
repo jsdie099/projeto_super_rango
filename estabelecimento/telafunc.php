@@ -46,8 +46,7 @@
 </div>
      <div class="wrapper">
 
-        <h1 class="titulo">Nome do Estabelecimento</h1>
-         <hr>
+
         <h1 class="titulo">Pedidos Pendentes</h1><br><br>
          <script src="js/jquery.js"></script>
          <script>

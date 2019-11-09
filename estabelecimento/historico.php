@@ -35,8 +35,7 @@
     </header>
 </div>
     <div class="wrapper">
-        <h1 class="titulo">Nome do Estabelecimento</h1><br>
-        <hr>
+
         <h1 class="titulo">Histórico dos Pedidos realizados</h1><br><br>
         <table border="1" id="table_hist">
             <tr>

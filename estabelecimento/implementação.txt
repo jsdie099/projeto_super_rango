@@ -2,3 +2,7 @@ Fazer por meio de requisições ao banco de dados, para os pedidos aparecerem em t
 do estabelecimento, também incrementar a barra navegável para ser mais flexível.
 
 Adicionar paginação no histórico de pedidos do estabelecimento
+
+
+mudar dados que aparecem ao entregador, para aparecer apenas o nome do cliente e o endereço,
+ao invés do pedido em si
