@@ -76,7 +76,7 @@ if(isset($_POST) and !empty($_POST))
     <div class="container">
         <header>
             <nav class="nav-container">
-                <a href="index.php"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a><br>
+                <a href="index.php"><img id="logo" src="img/logo.jpg" alt="Super Rango" title="Super Rango"></a><br>
                 <h1 id="titulo">SUPER RANGO</h1>
             </nav>
         </header>

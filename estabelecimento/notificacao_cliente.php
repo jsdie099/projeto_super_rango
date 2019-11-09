@@ -59,7 +59,7 @@ if($entrega->getTipo()==2)
         <header>
 
             <nav class="nav-container">
-                <a href="entregador.php"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a><br>
+                <a href="entregador.php"><img id="logo" src="img/logo.jpg" alt="Super Rango" title="Pedidos"></a><br>
                 <h1 id="titulo">SUPER RANGO</h1>
                 <ul>
                     <li>

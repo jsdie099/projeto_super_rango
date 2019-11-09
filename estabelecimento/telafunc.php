@@ -26,7 +26,7 @@
     <header>
 	
         <nav class="nav-container" id="nav">
-            <a href="telafunc.php"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a>
+            <a href="telafunc.php"><img id="logo" src="img/logo.jpg" alt="Super Rango" title="Super Rango"></a>
             <h1 id="titulo">SUPER RANGO</h1>
             <div class="teste">
                 <ul>

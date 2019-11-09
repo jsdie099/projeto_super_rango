@@ -53,7 +53,7 @@ if(isset($_POST) and !empty($_POST)) {
 <div class="container">
     <header>
         <nav class="nav-container">
-            <a href="telafunc.php"><img id="logo" src="img/logo.jpg" alt="Super Rango"></a>
+            <a href="telafunc.php"><img id="logo" src="img/logo.jpg" alt="Super Rango" title="Pedidos"></a>
             <h1 id="titulo">SUPER RANGO</h1>
             <div class="teste">
                 <ul>
@@ -74,8 +74,7 @@ if(isset($_POST) and !empty($_POST)) {
     </header>
 </div>
 <div class="wrapper">
-    <h1 class="titulo">Nome do Estabelecimento</h1><br>
-    <hr>
+
     <h1 class="titulo">Editar um Alimento do cardápio</h1><br><br>
     <table>
         <tr>
